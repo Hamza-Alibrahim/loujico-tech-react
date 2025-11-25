@@ -55,13 +55,6 @@ const LanguageSwitcher = () => {
             d="M19 9l-7 7-7-7"
           />
         </motion.svg>
-        {i18n.language !== currentLanguage.code && (
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-            className="w-3 h-3 border border-white border-t-transparent rounded-full"
-          />
-        )}
       </motion.button>
 
       {/* Language Dropdown */}
@@ -81,7 +74,7 @@ const LanguageSwitcher = () => {
                   key={language.code}
                   onClick={() => switchLanguage(language.code)}
                   className={`w-full flex items-center justify-between px-4 py-3 rounded-lg transition-all duration-300 group ${
-                    i18n.language === language.code
+                    currentLanguage.code === language.code
                       ? "bg-electric-violet/20 text-white"
                       : "text-white/80 hover:text-white hover:bg-white/5"
                   } ${index !== languages.length - 1 ? "mb-1" : ""}`}
