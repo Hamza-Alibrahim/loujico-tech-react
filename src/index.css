@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Purple Brand Colors */
+  --deep-space: #1A0B2E;
+  --royal-purple: #6A0DAD;
+  --electric-violet: #8A2BE2;
+  --soft-lavender: #E6E6FA;
+  --dark-charcoal: #2D2D2D;
+  --off-white: #F5F5F5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Brand Color Variables */
+  --color-deep-space: var(--deep-space);
+  --color-royal-purple: var(--royal-purple);
+  --color-electric-violet: var(--electric-violet);
+  --color-soft-lavender: var(--soft-lavender);
+  --color-dark-charcoal: var(--dark-charcoal);
+  --color-off-white: var(--off-white);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-cairo);
+}
+
+.shake-animation {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+}
